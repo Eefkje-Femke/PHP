@@ -1,4 +1,4 @@
-Verschil tussen een object en een klasse
+VERSCHIL TUSSEN EEN OBJECT EN EEN KLASSE
 
 Een klasse is een soort van blauwdruk. Je kan met behulp van een klasse de dingen (objecten) in groepen sorteren. 
 Een object is dan eigenlijk een eigenschap.
@@ -23,3 +23,56 @@ Hier kan je een stukje code zien. Er is een klasse gemaakt met de naam 'Song'.
 Een eigenschap (object) van de klasse 'Song' is de titel van het liedje.
 
 Dat is het verschil tussen een object en een klasse.
+
+
+PRIVATE, PUBLIC EN PROTECTED
+
+Public = iedereen kan de properties veranderen of methods uit te voeren. 
+Private = Je schermt de properties en de methodes af van de buitenwereld. 
+	Je kan alleen vanuit de klasse de properties veranderen of methodes aanroepen
+Protected = de properties zijn niet afgeschermd voor de huidige klasse en alle child klasses.
+
+
+UITLEG HTML TABEL!!!
+Ze maken 3 klasses: table, row en cell. 
+Content is een eigenschap van een cell.
+Cell is een eigenschap van een row.
+Row is een eigenschap van een table.
+
+class Table {
+    private $_rows;
+    
+}
+
+class Row {
+    private $_cells;
+
+}
+
+class Cell {
+    private $_content;
+
+}
+
+wat doet draw()
+wat doet append()
+waarom heb je een array nodig. 
+wat gebeurt er in deze lijn "$this->_rows = array();"
+Waarom construcrot public moet zijn
+
+
+CONSTRUCTOR MOET ALTIJD PUBLIC ZIJN
+Een constructor moet altijd public zijn omdat 
+een constructor altijd automatisch uitgevoerd wordt. 
+Als je constructor private staat wordt de constructor afgeschermd van de buitenwereld. 
+Dus als je iets wilt meegeven is dat niet mogelijk.
+
+EXTENDS
+Natuurkunde docent extends docent
+kind extends ouder
+huis extends muur 
+INCORRECT
+schoen extends veters
+
+
+

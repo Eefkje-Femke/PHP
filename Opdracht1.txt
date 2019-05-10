@@ -1,0 +1,25 @@
+Verschil tussen een object en een klasse
+
+Een klasse is een soort van blauwdruk. Je kan met behulp van een klasse de dingen (objecten) in groepen sorteren. 
+Een object is dan eigenlijk een eigenschap.
+
+public class Song
+{
+  public String songTitle;
+
+  public void setTitle(String newTitle)
+  {
+    songTitle = newTitle;
+  }
+
+  public String getTitle()
+  {
+    return songTitle;
+  }
+
+} // Song{}
+
+Hier kan je een stukje code zien. Er is een klasse gemaakt met de naam 'Song'. 
+Een eigenschap (object) van de klasse 'Song' is de titel van het liedje.
+
+Dat is het verschil tussen een object en een klasse.

@@ -5,16 +5,16 @@ class Card {
   private $open = false;
   private $found = false;
 
-  public isFound() {
+  public function isFound() {//Boolean type return!!
 		return $found;
 	}
 
-	public void setFound($found) {
+	public function setFound($found) {
 		$this->found = $found;
 		//this.setBackground($this->color);
 	}
 
-	public void setOpen($open) {
+	public function setOpen($open) {
 		$this->open = $open;
 		//this.setContentAreaFilled(open);
 		//System.out.print(open + " ");
@@ -24,7 +24,7 @@ class Card {
 		//this.repaint();
 	}
 
-	public getOpen() {
+	public function getOpen() {
 		return $this->open;
 	}
 

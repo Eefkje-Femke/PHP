@@ -18,7 +18,7 @@ class TableMGame {
         echo '<tr>'.PHP_EOL;
 
         foreach($row->getCells() as $cell) {
-            echo '<td>'.$cell->__construct().'</td>'.PHP_EOL;
+            echo '<td>'.$cell->getContent().'</td>'.PHP_EOL;
         }
 
         echo '</tr>'.PHP_EOL;

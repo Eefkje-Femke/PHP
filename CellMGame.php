@@ -1,35 +1,20 @@
 <?php
 class CellMGame {
     private $_content;
-    private $_numbers;
     private $cards;
+    private $numberID;
 
     function __construct($content) {
-      echo "jhj ";
         $this->_content = $content;
-        $this->_numbers = array();
+        $numberID = new NumberId();
+        // $this->_numbers = array();
 
-        $this->cards = array();
-        // for($i=0; $i<16; $i++){
-          array_push($this->cards, new Card($i+1));
-        // }
+        $this->cards = array();//create array
+        array_push($this->cards, new Card($numberID));//put card objects in array
     }
 
     public function getContent() {
         return $this->_content;
-    }
-
-    function chooseNum(){
-      for ($n = 1; $n < 9; $n++)
-      {
-          echo $n;
-          array_push($numbers, $n,$n);
-      }
-
-      foreach ($numbers as &$value)
-      {
-          return $value;
-      }
     }
 }
 ?>

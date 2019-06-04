@@ -4,7 +4,7 @@ class TableMGame {
 
   function __construct() {
       $this->_rows = array();
-      $this->draw();
+     // $this->draw();
   }
 
   public function append($row) {
@@ -18,14 +18,12 @@ class TableMGame {
         echo '<tr>'.PHP_EOL;
 
         foreach($row->getCells() as $cell) {
-            echo '<td>'.$cell->getContent().'</td>'.PHP_EOL;
+          $MCard = $cell->getContent();
+          echo '<td class="tableCell">' . $MCard->toHtml() . '<td>'.PHP_EOL;
         }
-
         echo '</tr>'.PHP_EOL;
     }
     echo '</table>'.PHP_EOL;
   }
 }
-
-
 ?>

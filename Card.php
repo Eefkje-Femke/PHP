@@ -2,10 +2,10 @@
 
 class Card {
   private $number;
-  private $open = false;
+  private $open = true;
   private $found = false;
 
-  public function isFound() {//Boolean type return!!
+  public function isFound() {
 		return $found;
 	}
 
@@ -16,6 +16,9 @@ class Card {
 
 	public function setOpen($open) {
 		$this->open = $open;
+      if($open){
+        echo $number;
+      }
 		//this.setContentAreaFilled(open);
 		//System.out.print(open + " ");
 		//if(open) {
@@ -27,6 +30,10 @@ class Card {
 	public function getOpen() {
 		return $this->open;
 	}
+
+  public function toHtml(){//kind of a toString object (denk aan java, waar hij zit)
+    return $this->number;
+  }
 
   function __construct($number){
     $this->number = $number;

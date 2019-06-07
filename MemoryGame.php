@@ -3,14 +3,14 @@
   // spl_autoload_register(function($classname){
   //   include "classes/" . $className . ".php";
   // });
-  $counter = 1;
   $classname = new TableMGame();
+
+  $numberID = new NumberID();//create array
 
   for ($r = 1; $r < 5 ; $r++) {
     $row = new RowMGame();//create new row
       for ($c = 1; $c < 5; $c++){
-        $row->append(new CellMGame($counter));//create new cell
-        $counter++;
+        $row->append(new CellMGame($numberID->getRandomNumber()));//create new cell
       }
       $classname->append($row);//add row to table
   }
@@ -36,7 +36,6 @@ crossorigin="anonymous"></script>
 <style>
 table, tr, td {
   border: 1px solid black;
-  margin: 5px;
 }
 table {
   border-collapse: collapse;

@@ -1,5 +1,4 @@
 <?php
-
 class Card {
   private $number;
   private $open = true;

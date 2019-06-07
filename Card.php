@@ -1,8 +1,8 @@
 <?php
 class Card {
   private $number;
-  private $open = true;
-  private $found = false;
+  // private $open = false;
+  // private $found = false;
 
   public function isFound() {
 		return $found;

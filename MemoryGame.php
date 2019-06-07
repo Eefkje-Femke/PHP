@@ -23,14 +23,46 @@
   }
 ?>
 
-<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
+  var card1 = 0;
+  var card2 = 0;
+  var id1 = 0;
+  var id2 = 0;
     $(".tableCell").click(function() {
-      alert("hallo");
+      var number = $(this).text();
+      var id = $(this).attr('id');
+
+      $( "div#"+id ).removeClass("hidden");
+        if (card1 == 0)
+        {
+          id1 = id;
+          card1 = number;
+        } else {
+          id2 = id;
+          card2 = number;
+        }
+
+        document.getElementById(id).style.visibility = "hidden";
+
+        alert("card1:  " + card1 +" card2: " + card2);
+        if(card1 != 0 && card2 != 0){
+          if(id1 != id2){
+            if(card1 == card2){
+              alert("match!");
+            }else{
+              card1 = 0;
+              card2 = 0;
+              alert("mismatch!");
+            }
+          } else{
+            alert("cannot click on the same card twice! Please click again");
+            card2 = 0;
+            id2 = 0;
+          }
+        }
     });
-</script> -->
+</script>
 
 
 <style>
@@ -44,5 +76,9 @@ table {
 }
 td {
   padding: 25px;
+}
+
+.hidden{
+  visibility: hidden;
 }
 </style>

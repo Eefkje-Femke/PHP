@@ -1,0 +1,17 @@
+<style>
+table, tr, td {
+  border: 1px solid black;
+}
+table {
+  border-collapse: collapse;
+  text-align: center;
+  margin: 20px;
+}
+td {
+  padding: 25px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+</style>

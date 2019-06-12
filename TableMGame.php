@@ -19,12 +19,13 @@ class TableMGame {
 
         foreach($row->getCells() as $cell) {
           $MCard = $cell->getContent();
-          echo '<td><div class="tableCell hidden" id="'.$this->counter.'">' . $MCard->toHtml() . '</div></td>'.PHP_EOL;
+          echo '<td class="tableCell" id='.$this->counter.'><div class="hidden">' . $MCard->toHtml() . '</div></td>'.PHP_EOL;
           $this->counter++;
         }
         echo '</tr>'.PHP_EOL;
     }
     echo '</table>'.PHP_EOL;
+    echo '<p id="counter">Matching cards found: 0</p>';
   }
 }
 ?>

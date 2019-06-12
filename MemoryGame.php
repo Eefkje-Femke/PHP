@@ -1,8 +1,7 @@
 <?php
-  spl_autoload_register('myAutoloader');
-  // spl_autoload_register(function($classname){
-  //   include "classes/" . $className . ".php";
-  // });
+spl_autoload_register('myAutoloader');
+
+
   $classname = new TableMGame();
 
   $numberID = new NumberID();//create array
@@ -17,32 +16,9 @@
   $classname->draw();
 
 
-  function myAutoloader($className)
-  {
+  function myAutoloader($className){
     include 'classes/' . $className . '.php';
   }
+  include 'mystyle.css';
+  include 'GameRules.js';
 ?>
-
-<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
-<script>
-    $(".tableCell").click(function() {
-      alert("hallo");
-    });
-</script> -->
-
-
-<style>
-table, tr, td {
-  border: 1px solid black;
-}
-table {
-  border-collapse: collapse;
-  text-align: center;
-  margin: 20px;
-}
-td {
-  padding: 25px;
-}
-</style>

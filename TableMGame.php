@@ -1,11 +1,10 @@
 <?php
 class TableMGame {
   private $_rows;
-  // public $numberArr = array( 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8);
+  private $counter = 1;
 
   function __construct() {
       $this->_rows = array();
-     // $this->draw();
   }
 
   public function append($row) {
@@ -20,11 +19,13 @@ class TableMGame {
 
         foreach($row->getCells() as $cell) {
           $MCard = $cell->getContent();
-          echo '<td class="tableCell">' . $MCard->toHtml() . '</td>'.PHP_EOL;
+          echo '<td class="tableCell" id='.$this->counter.'><div class="hidden">' . $MCard->toHtml() . '</div></td>'.PHP_EOL;
+          $this->counter++;
         }
         echo '</tr>'.PHP_EOL;
     }
     echo '</table>'.PHP_EOL;
+    echo '<p id="counter">Matching cards found: 0</p>';
   }
 }
 ?>

@@ -54,11 +54,8 @@ class Cell {
 
 }
 
-wat doet draw()
-wat doet append()
-waarom heb je een array nodig. 
-wat gebeurt er in deze lijn "$this->_rows = array();"
-Waarom construcrot public moet zijn
+de draw() functie gaat daadwerkelijk de tabel "tekenen" met HTML elementen
+Eigenlijk maak je maar 1 tabel en daarin heb je zoveel rijen en in die rijen heb je dan zoveel cellen.
 
 
 CONSTRUCTOR MOET ALTIJD PUBLIC ZIJN
@@ -74,5 +71,8 @@ huis extends muur
 INCORRECT
 schoen extends veters
 
+opdracht 11
+One rule-of-thumb: ask yourself "does it make sense to call this method, even if no Obj has been constructed yet?" 
+If so, it should definitely be static.
 
 

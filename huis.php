@@ -1,18 +1,18 @@
 <?php
 /*huis class*/
 class Huis{
-    public $kamer;
-    public $toilet;
-    public $kachel;
-    public $soortKachel;
-    public $huisNum;
-    public $straatnaam;
-    public $plaats;
-    public $vMeter;
-    public $woz;
+    private $kamer;
+    private $toilet;
+    private $kachel;
+    private $soortKachel;
+    private $huisNum;
+    private $straatnaam;
+    private $plaats;
+    private $vMeter;
+    private $woz;
 
-    public function __construct($kamer, $toilet, $kachel, $soortKachel, $plaats, $huisNum, $straatnaam, $vMeter, $woz){
-
+    public function calWOZ($kamer, $woz){
+      //functie calculate the WOZ waarde
       switch ($kamer) {
         case 1:
             $woz = $woz + 100;
@@ -23,6 +23,29 @@ class Huis{
         default:
         $woz = $woz +  800;
       }
+      return $woz;
+    }
+
+    public function Plaats($plaats, $woz){
+      //functie kijken of je EXTRA belasting moet betalen
+      switch ($plaats) {
+        case 'Amsterdam':
+              $woz = $woz + 1000;
+            break;
+        case 'Rotterdam':
+            $woz = $woz + 1000;
+            break;
+        case 'Groningen':
+            $woz = $woz + 1000;
+            break;
+        default:
+          ;
+      }
+      return $woz;
+    }
+
+    public function __construct($kamer, $toilet, $kachel, $soortKachel, $plaats, $huisNum, $straatnaam, $vMeter, $woz){
+      //een hele grote constructor
       $this->_kamer = $kamer;
       $this->_toilet = $toilet;
       $this->_kachel = $kachel;
@@ -30,19 +53,6 @@ class Huis{
       $this->_huisNum = $huisNum;
       $this->_straatnaam = $straatnaam;
       $this->_vMeter = $vMeter;
-        switch ($plaats) {
-          case 'Amsterdam':
-                $woz = $woz + 1000;
-              break;
-          case 'Rotterdam':
-              $woz = $woz + 1000;
-              break;
-          case 'Groningen':
-              $woz = $woz + 1000;
-              break;
-          default:
-            ;
-        }
       $this->_plaats = $plaats;
       $this->_woz = $woz;
     }
@@ -74,19 +84,21 @@ class Huis{
     public function getWoz() {
       return $this->_woz;
     }
-}
 
-$huis = new Huis(8, 1, 'Ja', 'elektrisch', 'Emmen', 99 , 'Oosterstraat', 250, 0);//create object
+}//class huis
 
+$huis = new Huis(8, 1, 'Ja', 'elektrisch', 'Emmen', 99 , 'Oosterstraat', 250, 2000);//create object
+
+//echo ik alle informatie van het huis
 echo 'Aantal kamers: ' .$huis->getKamer(). '<br />';
 echo 'Aantal toiletten: ' .$huis->getToilet(). '<br />';
 echo 'Kachel: ' .$huis->getKachel(). '<br />';
 echo 'Soort kachel: ' .$huis->getSoortKachel(). '<br />';
-echo 'Het huisnummer: ' .$huis->getHuisNum(). '<br />';
+echo 'Huisnummer: ' .$huis->getHuisNum(). '<br />';
 echo 'Straatnaam: ' .$huis->getStraatnaam(). '<br />';
 echo 'Plaats: ' .$huis->getPlaats(). '<br />';
 echo 'Vierkante meter: ' .$huis->getvMeter(). 'm²<br />';
-echo 'WOZ waarde: ' .$huis->getWoz(). '';
+echo 'WOZ waarde: €' .$huis->getWoz(). ',00';
 
-/*select box?*/
+
 ?>

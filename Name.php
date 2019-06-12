@@ -1,6 +1,6 @@
 <?php
 /* De User class */
-class Opdracht4 {
+class Name {
   private $Firstname;
   private $Lastname;
 
@@ -20,13 +20,11 @@ class Opdracht4 {
   }
 }
 
-
-
 /* Reguliere procedurele code */
-$Opdracht4 = new Opdracht4();//create object
-$Opdracht4->setFirstname('Jan');
-$Opdracht4->setLastname(' Jansen');
+$Name = new Name();//create object
+$Name->setFirstname('Jan');
+$Name->setLastname(' Jansen');
 
-echo $Opdracht4->getFirstname();
-echo $Opdracht4->getLastname();
+echo $Name->getFirstname();
+echo $Name->getLastname();
 ?>

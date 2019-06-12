@@ -22,8 +22,8 @@ class User {
 
 /* Reguliere procedurele code */
 $user = new User();//create object
-$user->setUsername('jan');
-$user->setLastname('Jansen');
+$user->setUsername('Jan');
+$user->setLastname(' Jansen');
 
 echo $user->getUsername();
 echo $user->getLastname();

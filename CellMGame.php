@@ -1,5 +1,6 @@
 <?php
 class CellMGame {
+  //dit is een cell met een card object er in
     private $_content;
     private $card;
 

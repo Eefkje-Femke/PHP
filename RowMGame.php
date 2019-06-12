@@ -3,7 +3,7 @@ class RowMGame {
     private $_cells;
 
     function __construct() {
-        $this->_cells = array();
+        $this->_cells = array();//hier komen alle cellen in
     }
 
     public function append($cell) {

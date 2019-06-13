@@ -1,104 +1,30 @@
-<?php
-/*huis class*/
-class Huis{
-    private $kamer;
-    private $toilet;
-    private $kachel;
-    private $soortKachel;
-    private $huisNum;
-    private $straatnaam;
-    private $plaats;
-    private $vMeter;
-    private $woz;
+<!DOCTYPE html>
+<html lang="nl">
+  	<head>
+  		<meta charset="utf-8"/>
+  		<title>De titel van je website</title>
+  	</head>
+	<body>
+    <?php
+      include 'HuisEigenschappen.php';
+        $huis = new HuisEigenschappen(1, 'elektrisch', 'Emmen', 99 , 'Oosterstraat', 250);//create object
+        $huis->setToilet('Ja');
+        $huis->setkamer(8);
+        $huis->setWoz(2000, 8, 'Emmen');
 
-    public function calWOZ($kamer, $woz){
-      //functie calculate the WOZ waarde
-      switch ($kamer) {
-        case 1:
-            $woz = $woz + 100;
-            break;
-        case 2:
-            $woz = $woz + 300;
-            break;
-        default:
-        $woz = $woz +  800;
-      }
-      return $woz;
-    }
-
-    public function Plaats($plaats, $woz){
-      //functie kijken of je EXTRA belasting moet betalen
-      switch ($plaats) {
-        case 'Amsterdam':
-              $woz = $woz + 1000;
-            break;
-        case 'Rotterdam':
-            $woz = $woz + 1000;
-            break;
-        case 'Groningen':
-            $woz = $woz + 1000;
-            break;
-        default:
-          ;
-      }
-      return $woz;
-    }
-
-    public function __construct($kamer, $toilet, $kachel, $soortKachel, $plaats, $huisNum, $straatnaam, $vMeter, $woz){
-      //een hele grote constructor
-      $this->_kamer = $kamer;
-      $this->_toilet = $toilet;
-      $this->_kachel = $kachel;
-      $this->_soortKachel = $soortKachel;
-      $this->_huisNum = $huisNum;
-      $this->_straatnaam = $straatnaam;
-      $this->_vMeter = $vMeter;
-      $this->_plaats = $plaats;
-      $this->_woz = $woz;
-    }
-
-    public function getKamer() {
-        return $this->_kamer;
-    }
-    public function getToilet() {
-      return $this->_toilet;
-    }
-    public function getKachel() {
-      return $this->_kachel;
-    }
-    public function getSoortKachel() {
-      return $this->_soortKachel;
-    }
-    public function getHuisNum() {
-      return $this->_huisNum;
-    }
-    public function getStraatnaam() {
-      return $this->_straatnaam;
-    }
-    public function getPlaats() {
-      return $this->_plaats;
-    }
-    public function getvMeter() {
-      return $this->_vMeter;
-    }
-    public function getWoz() {
-      return $this->_woz;
-    }
-
-}//class huis
-
-$huis = new Huis(8, 1, 'Ja', 'elektrisch', 'Emmen', 99 , 'Oosterstraat', 250, 2000);//create object
-
-//echo ik alle informatie van het huis
-echo 'Aantal kamers: ' .$huis->getKamer(). '<br />';
-echo 'Aantal toiletten: ' .$huis->getToilet(). '<br />';
-echo 'Kachel: ' .$huis->getKachel(). '<br />';
-echo 'Soort kachel: ' .$huis->getSoortKachel(). '<br />';
-echo 'Huisnummer: ' .$huis->getHuisNum(). '<br />';
-echo 'Straatnaam: ' .$huis->getStraatnaam(). '<br />';
-echo 'Plaats: ' .$huis->getPlaats(). '<br />';
-echo 'Vierkante meter: ' .$huis->getvMeter(). 'm²<br />';
-echo 'WOZ waarde: €' .$huis->getWoz(). ',00';
-
-
-?>
+        echo "<table>";
+          echo "<tr>";
+            echo 'Aantal kamers: ' .$huis->getKamer(). '<br />';
+            echo 'Aantal toiletten: ' .$huis->getToilet(). '<br />';
+            echo 'Kachel: ' .$huis->getKachel(). '<br />';
+            echo 'Soort kachel: ' .$huis->getSoortKachel(). '<br />';
+            echo 'Huisnummer: ' .$huis->getHuisNum(). '<br />';
+            echo 'Straatnaam: ' .$huis->getStraatnaam(). '<br />';
+            echo 'Plaats: ' .$huis->getPlaats(). '<br />';
+            echo 'Vierkante meter: ' .$huis->getvMeter(). 'm²<br />';
+            echo 'WOZ waarde: €' .$huis->getWoz(). ',00';
+          echo "</tr>";
+        echo "</table>";
+    ?>
+  </body>
+</html>
